@@ -17,3 +17,13 @@ edition = "2015"
 
 [dependencies]
 audiopus_sys = "0.2.0"
+
+# Optional dependencies for .opus file playback
+# These are not required for the core opus encoding/decoding functionality
+ogg = { version = "0.8", optional = true }
+rodio = { version = "0.17", optional = true }
+
+[features]
+default = []
+# Enable this feature to include .opus file playback capabilities
+playback = ["ogg", "rodio"]
